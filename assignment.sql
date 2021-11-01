@@ -1,3 +1,6 @@
+create database restaurant;
+use restaurant;
+
 create table salespeople(
 snum int,
 sname varchar(15),
