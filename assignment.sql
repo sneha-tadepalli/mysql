@@ -52,16 +52,18 @@ insert into orders(onum,amt,odate,cnum,snum) values
 (3006,1098.16,'1990-10-3',2008,1007),
 (3009 ,1713.23, '1990-10-4', 2002, 1003),
 (3007,  75.75, '1990-10-4' ,2004 ,1002),
-(3008,  4273.00 ,1990-10-5', 2006, 1001),
+(3008,  4273.00 ,'1990-10-5', 2006, 1001),
 (3010,  1309.95, '1990-10-6' ,2004, 1002),
 (3011,  9891.88, '1990-10-6', 2006, 1001);
 
---1. Count the number of Salesperson whose name begin with ‘a’/’A’.
+--1. Count the number of Salesperson whose name begin with â€˜aâ€™/â€™Aâ€™.
     
     select count(*) from salespeople where sname like 'A%' or sname like 'a%';
+
 --2. Display all the Salesperson whose all orders worth is more than Rs. 2000.
 
     select salespeople.sname,salespeople.snum,orders.amt from salespeople inner join orders on salespeople.snum = orders.snum where amt >2000;
+
 --3. Count the number of Salesperson belonging to Newyork.
 
     select count(*) from salespeople where city = 'newyork';
@@ -69,6 +71,7 @@ insert into orders(onum,amt,odate,cnum,snum) values
 --4. Display the number of Salespeople belonging to London and belonging to Paris.
 
      select sname,city from salespeople where city = 'london' and city = 'paris';
+
 --5.Display the number of orders taken by each Salesperson and their date of orders.
 
     select salespeople.sname,orders.snum,orders.odate from salespeople inner join orders on salespeople.snum = orders.snum;
